@@ -1,0 +1,67 @@
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+}
+
+#game_container {
+  border: 1px solid black;
+  height: 600px;
+  width: 800px;
+}
+
+#game_container #topScreen {
+  background-color: pink;
+  height: 70%;
+}
+
+#game_container #bottomScreen {
+  background-color: lightgreen;
+  height: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+#game_container #bottomScreen #bottomScreenLeft {
+  background-color: plum;
+  width: 420px;
+}
+
+#game_container #bottomScreen #bottomScreenRight {
+  background-color: lightblue;
+  width: 340px;
+}
+
+.modal {
+  background-color: lightsteelblue;
+  font-family: arial;
+  font-size: 16pt;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+/*# sourceMappingURL=style.css.map */

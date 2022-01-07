@@ -1,0 +1,42 @@
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+#game_container{
+    border:1px solid black;
+    height:600px;
+    width:800px;
+    #topScreen{
+        background-color:pink;
+        height:70%;
+    }
+    #bottomScreen{
+        background-color:lightgreen;
+        height:30%;
+        display:flex;
+        flex-direction:row;
+        justify-content:space-around;
+        #bottomScreenLeft{
+            background-color:plum;
+            width:420px;
+        }
+        #bottomScreenRight{
+            background-color:lightblue;
+            width:340px;
+        }
+    }
+}
+
+.modal{
+    background-color:lightsteelblue;
+    font-family:arial;
+    font-size:16pt;
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    align-items:center;
+
+}
