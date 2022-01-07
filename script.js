@@ -22,14 +22,19 @@ modal.appendChild(confirmName);
 modal.appendChild(resetName);
 
 confirmName.onclick = () => {
-    userName = userNameInput.value;
-    level = 1;
-    money = 0;
-    modal.remove();
-    document.getElementById('container').hidden = false;
-    document.getElementById('playerName').innerText = userName;
-    document.getElementById('playerLevel').innerText = level;
-    document.getElementById('playerMoney').innerText = money;
+    if(userNameInput.value == "" || userNameInput.value == null){
+        alert("Please enter a valid name!");
+    }else{
+        userName = userNameInput.value;
+        level = 1;
+        money = 0;
+        modal.remove();
+        document.getElementById('container').hidden = false;
+        document.getElementById('playerName').innerText = userName;
+        document.getElementById('playerLevel').innerText = level;
+        document.getElementById('playerMoney').innerText = money;
+    }
+    
 }
 resetName.onclick = () => userNameInput.value = "";
 
@@ -47,15 +52,24 @@ function updateStats(){
     document.getElementById('playerMoney').innerText = money;
 }
 
+function saveGame(){
+    localStorage.setItem('name', userName);
+    localStorage.setItem('level', level);
+    localStorage.setItem('money', money);
+    
+}
 
+/*auto save*/
+setInterval(()=>{
+    saveGame();
+    console.log("Autosave complete...");
+},60000);
 
 function savePrompt(){
     let ans = confirm('Save Game?');
     if(ans == true){
         alert('Game saved');
-        localStorage.setItem('name', userName);
-        localStorage.setItem('level', level);
-        localStorage.setItem('money', money);
+        saveGame();
     }else{
         alert('Game not saved');
     }
@@ -76,3 +90,4 @@ function loadPrompt(){
         updateStats();
     }
 }
+
