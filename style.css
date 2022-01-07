@@ -19,7 +19,19 @@ body {
 
 #game_container #topScreen {
   background-color: pink;
+  padding: 5px;
   height: 70%;
+}
+
+#game_container #topScreen #sceneContainer {
+  width: 100%;
+  height: 100%;
+  background-color: lightblue;
+}
+
+#game_container #topScreen #sceneContainer img {
+  width: 100%;
+  height: 100%;
 }
 
 #game_container #bottomScreen {
@@ -97,6 +109,10 @@ body {
   position: relative;
   top: 3px;
   cursor: pointer;
+}
+
+#game_container #bottomScreen #bottomScreenLeft #playerName, #game_container #bottomScreen #bottomScreenLeft #playerLevel, #game_container #bottomScreen #bottomScreenLeft #playerMoney {
+  color: yellow;
 }
 
 #game_container #bottomScreen #bottomScreenRight {

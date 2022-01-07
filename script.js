@@ -1,7 +1,9 @@
 
 let userName;
-let level;
-let money;
+let level = 1;
+let money = 100;
+let scene;
+
 /*
 {
 let modal = document.createElement('div');
@@ -26,8 +28,6 @@ confirmName.onclick = () => {
         alert("Please enter a valid name!");
     }else{
         userName = userNameInput.value;
-        level = 1;
-        money = 0;
         modal.remove();
         document.getElementById('container').hidden = false;
         document.getElementById('playerName').innerText = userName;
@@ -38,9 +38,14 @@ confirmName.onclick = () => {
 }
 resetName.onclick = () => userNameInput.value = "";
 
-}*/
+}
+*/
 
-let save = document.getElementById('playerSave');
+scene = document.getElementById("scene");
+
+scene.src = '/images/scenes/town.jpg';
+
+let save = document.getElementById('saveGame');
 save.addEventListener('click',() =>{
     savePrompt();
 });
@@ -75,7 +80,7 @@ function savePrompt(){
     }
 };
 
-let load = document.getElementById('playerLoad');
+let load = document.getElementById('loadGame');
 load.addEventListener('click', () =>{
     loadPrompt();
 })
