@@ -167,6 +167,7 @@ body {
 }
 
 .modal {
+  position: absolute;
   background-color: lightsteelblue;
   font-family: arial;
   font-size: 16pt;

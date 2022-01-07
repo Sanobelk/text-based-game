@@ -4,7 +4,7 @@ let level = 1;
 let money = 100;
 let scene;
 
-/*
+
 {
 let modal = document.createElement('div');
 modal.classList.add('modal');
@@ -39,7 +39,7 @@ confirmName.onclick = () => {
 resetName.onclick = () => userNameInput.value = "";
 
 }
-*/
+
 
 scene = document.getElementById("scene");
 
@@ -61,7 +61,14 @@ function saveGame(){
     localStorage.setItem('name', userName);
     localStorage.setItem('level', level);
     localStorage.setItem('money', money);
-    
+    let modal = document.createElement('div');
+    modal.classList.add('modal');
+    modal.textContent = "Game Saved to Local Storage";
+    modal.style.height = '100px';
+    document.body.appendChild(modal);
+    setTimeout(()=>{
+        modal.remove();
+    },2000);
 }
 
 /*auto save*/
@@ -71,14 +78,38 @@ setInterval(()=>{
 },60000);
 
 function savePrompt(){
+    savePrompt2();
+    /*
     let ans = confirm('Save Game?');
     if(ans == true){
         alert('Game saved');
-        saveGame();
+        
     }else{
         alert('Game not saved');
-    }
+    }*/
 };
+
+function savePrompt2(){
+    let modal = document.createElement('div');
+    modal.classList.add('modal');
+    modal.textContent = 'Save Game?';
+    modal.style.width = '300px';
+    modal.style.height = '100px';
+    let save = document.createElement('button');
+    let quit = document.createElement('button');
+    save.textContent = "Yes";
+    quit.textContent = "No";
+    save.addEventListener('click',()=>{
+        modal.remove();
+        saveGame();
+    });
+    quit.addEventListener('click',()=>{
+        modal.remove();
+    })
+    modal.appendChild(save);
+    modal.appendChild(quit);
+    document.body.appendChild(modal);
+}
 
 let load = document.getElementById('loadGame');
 load.addEventListener('click', () =>{
