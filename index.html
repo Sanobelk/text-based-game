@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <div id="container" hidden>
+    <div id="container">
         <div id="game_container">
             <div id="topScreen"></div>
             <div id="bottomScreen">
@@ -17,9 +17,11 @@
                         <li class="bottomScreenLeftMenu-item">Name: <span id="playerName"></span></li>
                         <li class="bottomScreenLeftMenu-item">Level: <span id="playerLevel"></span></li>
                         <li class="bottomScreenLeftMenu-item">Money: <span id="playerMoney"></span></li>
-                        <li class="bottomScreenLeftMenu-item" id="playerSave">Save:</li>
-                        <li class="bottomScreenLeftMenu-item" id="playerLoad">Load:</li>
                     </ul>
+                    <div id="fileMenu">
+                        <button id="saveGame">Save</button>
+                        <button id="loadGame">Load</button>
+                    </div>
                 </div>
                     
                 <div id="bottomScreenRight">

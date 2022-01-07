@@ -22,10 +22,83 @@ body{
         #bottomScreenLeft{
             background-color:plum;
             width:420px;
+            display:flex;
+            flex-direction:column;
+            justify-content:space-around;
+            ul{
+                margin:auto;
+                list-style-type:none;
+                margin:0;
+                padding:0;
+                li{
+                    background-color:rgb(114, 97, 76);
+                    height:20%;
+                    color:white;
+                    font-family:arial;
+                    padding:5px;
+                    font-size:16pt;
+                    border-bottom:1px solid black;
+                }
+            }
+            #fileMenu{
+                
+                background-color:tan;
+                border:1px solid darkgoldenrod;
+                padding:0px;
+                width:100%;
+                display:flex;
+                justify-content:center;
+                button{
+                    margin:10px;
+                    width:100px;
+                    height:25px;
+                    background-color:rgb(114, 97, 76);
+                    color:white;
+                    border:1px solid black;
+                    box-shadow:2px 2px 2px black;
+                }
+                button:hover{
+                    background-color:tan;
+                    color:black;
+                    position:relative;
+                    top:3px;
+                    cursor:pointer;
+                }
+            }
         }
         #bottomScreenRight{
             background-color:lightblue;
             width:340px;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            ul{
+                list-style-type:none;
+                background-color:pink;
+                margin:0;
+                padding:0;
+                height:90%;
+                width:100%;
+                li{
+                    border-bottom:1px solid black;
+                    height:25%;
+                    width:100%;
+                    color:yellow;
+                    background-color:rgb(114, 97, 76);
+                    font-family:cursive;
+                    display:flex;
+                    justify-content:center;
+                    align-items:center;
+                }
+                li:hover{
+                    color:white;
+                    background-color:tan;
+                }
+                li .active{
+                    color:white;
+                    background-color:tan;
+                }
+            }
         }
     }
 }

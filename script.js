@@ -2,7 +2,7 @@
 let userName;
 let level;
 let money;
-
+/*
 {
 let modal = document.createElement('div');
 modal.classList.add('modal');
@@ -38,7 +38,7 @@ confirmName.onclick = () => {
 }
 resetName.onclick = () => userNameInput.value = "";
 
-}
+}*/
 
 let save = document.getElementById('playerSave');
 save.addEventListener('click',() =>{
