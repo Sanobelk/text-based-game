@@ -4,6 +4,12 @@ let level = 1;
 let money = 100;
 let scene;
 let playerInside = false;
+let bgm = null;
+const musicToggleButton =  document.getElementById('musicButton');
+
+musicToggleButton.addEventListener('click',() => {
+    toggleMusic(bgm);
+})
 
 {
 let modal = document.createElement('div');
@@ -33,6 +39,8 @@ confirmName.onclick = () => {
         document.getElementById('playerName').innerText = userName;
         document.getElementById('playerLevel').innerText = level;
         document.getElementById('playerMoney').innerText = money;
+        bgm = new Audio('sounds/bgm/town.mp3');
+        bgm.play();
     }
     
 }
@@ -40,6 +48,16 @@ resetName.onclick = () => userNameInput.value = "";
 
 }
 
+function toggleMusic(bgm){
+    if(bgm.paused){
+        musicToggleButton.src='images/icons/ui/music_active.png';
+        bgm.play();
+    }else{
+        bgm.pause();
+        musicToggleButton.src='images/icons/ui/music_inactive.png';
+        
+    }
+}
 
 scene = document.getElementById("scene");
 
@@ -145,6 +163,8 @@ function visitTavern(){
     backButton.style.background = 'brown';
     scene.src = 'images/scenes/tavern.png';
     console.log('you visit the tavern');
+    bgm.src = 'sounds/bgm/harmony.mp3';
+    bgm.play();
 }
 
 function visitShop(){
@@ -153,6 +173,8 @@ function visitShop(){
     backButton.style.background = 'brown';
     scene.src = 'images/scenes/shop.jpg';
     console.log('you visit the shop');
+    bgm.src = 'sounds/bgm/shop.mp3';
+    bgm.play();
 }
 
 function visitInn(){
@@ -161,6 +183,8 @@ function visitInn(){
     backButton.style.background = 'brown';
     scene.src = 'images/scenes/inn.jpg';
     console.log('you visit the inn');
+    bgm.src = 'sounds/bgm/inn.mp3';
+    bgm.play();
 }
 
 function goBack(){
@@ -171,6 +195,8 @@ function goBack(){
         console.log('you return to town');
         backButton.textContent = '';
         backButton.style.background = `rgb(114, 97, 76)`;
+        bgm.src = 'sounds/bgm/town.mp3';
+        bgm.play();
     }
 }
 

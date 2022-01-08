@@ -21,6 +21,16 @@ body{
                 width:100%;
                 height:100%;
             }
+            #musicButton{
+            width:70px;
+            height:50px;
+            z-index:100;
+            position:relative;
+            top:-60px;
+            }
+            #musicButton:hover{
+                top:-65px;
+            }
         }
     }
     #bottomScreen{

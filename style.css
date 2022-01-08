@@ -34,6 +34,18 @@ body {
   height: 100%;
 }
 
+#game_container #topScreen #sceneContainer #musicButton {
+  width: 70px;
+  height: 50px;
+  z-index: 100;
+  position: relative;
+  top: -60px;
+}
+
+#game_container #topScreen #sceneContainer #musicButton:hover {
+  top: -65px;
+}
+
 #game_container #bottomScreen {
   background-color: lightgreen;
   height: 30%;
