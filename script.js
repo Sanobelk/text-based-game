@@ -3,7 +3,7 @@ let userName;
 let level = 1;
 let money = 100;
 let scene;
-
+let playerInside = false;
 
 {
 let modal = document.createElement('div');
@@ -46,7 +46,9 @@ scene = document.getElementById("scene");
 scene.src = '/images/scenes/town.jpg';
 
 let save = document.getElementById('saveGame');
-save.addEventListener('click',() =>{
+
+save.addEventListener('click', ()=>{
+    save.disabled = true;
     savePrompt();
 });
 
@@ -95,19 +97,21 @@ function savePrompt2(){
     modal.textContent = 'Save Game?';
     modal.style.width = '300px';
     modal.style.height = '100px';
-    let save = document.createElement('button');
-    let quit = document.createElement('button');
-    save.textContent = "Yes";
-    quit.textContent = "No";
-    save.addEventListener('click',()=>{
+    let choiceSave = document.createElement('button');
+    let choiceQuit = document.createElement('button');
+    choiceSave.textContent = "Yes";
+    choiceQuit.textContent = "No";
+    choiceSave.addEventListener('click',()=>{
         modal.remove();
         saveGame();
+        save.disabled = false;
     });
-    quit.addEventListener('click',()=>{
+    choiceQuit.addEventListener('click',()=>{
         modal.remove();
+        save.disabled = false;
     })
-    modal.appendChild(save);
-    modal.appendChild(quit);
+    modal.appendChild(choiceSave);
+    modal.appendChild(choiceQuit);
     document.body.appendChild(modal);
 }
 
@@ -127,3 +131,50 @@ function loadPrompt(){
     }
 }
 
+
+const tavernMenuButton = document.getElementById('tavernMenuButton');
+const shopMenuButton = document.getElementById('shopMenuButton');
+const innMenuButton = document.getElementById('innMenuButton');
+const backButton = document.getElementById('backMenuButton');
+backButton.style.color = 'white';
+
+
+function visitTavern(){
+    playerInside = true;
+    backButton.textContent = 'Back';
+    backButton.style.background = 'brown';
+    scene.src = 'images/scenes/tavern.png';
+    console.log('you visit the tavern');
+}
+
+function visitShop(){
+    playerInside = true;
+    backButton.textContent = 'Back';
+    backButton.style.background = 'brown';
+    scene.src = 'images/scenes/shop.jpg';
+    console.log('you visit the shop');
+}
+
+function visitInn(){
+    playerInside = true;
+    backButton.textContent = 'Back';
+    backButton.style.background = 'brown';
+    scene.src = 'images/scenes/inn.jpg';
+    console.log('you visit the inn');
+}
+
+function goBack(){
+    if(playerInside){
+        console.log(playerInside);
+        playerInside = false;
+        scene.src = 'images/scenes/town.jpg';
+        console.log('you return to town');
+        backButton.textContent = '';
+        backButton.style.background = `rgb(114, 97, 76)`;
+    }
+}
+
+tavernMenuButton.addEventListener('click', () => { visitTavern();});
+shopMenuButton.addEventListener('click', () => { visitShop();});
+innMenuButton.addEventListener('click', () => { visitInn();});
+backButton.addEventListener('click',() => {goBack();})
